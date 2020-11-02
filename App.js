@@ -16,8 +16,13 @@ import AccessoriesImageTile1 from "./assets/AccessoriesImageMobile1.jpg";
 import ProductImage1 from "./assets/ProductImage1.jpg";
 import HeroImage2Mobile from "./assets/HeroImage2Mobile.jpg";
 import Hero from "react-native-hero";
+import SocialImage1 from "./assets/Social1.jpg";
+import SocialImage2 from "./assets/Social2.jpg";
+import SocialImage3 from "./assets/Social3.jpg";
+import SocialImage4 from "./assets/Social4.jpg";
+import SocialImage5 from "./assets/Social5.jpg";
 
-const carouselData = [
+const carouselData1 = [
   {
     title: "Product Title",
     description: "Women's T-Shirt",
@@ -80,55 +85,6 @@ export default function App() {
             <Text style={styles.buttonText}>Sale!</Text>
           </TouchableOpacity>
         </View>
-
-        {/* <Image source={heroImage1} style={styles.heroImage} />
-
-        <View
-          style={{
-            position: "absolute",
-            top: 60,
-            left: 0,
-            right: 270,
-            bottom: 0,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <TouchableOpacity>
-            <Text style={styles.heroOverlayButtonText}>SHOP NOW</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View
-          style={{
-            position: "absolute",
-            top: -100,
-            left: 20,
-            right: 270,
-            bottom: 0,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Text style={styles.heroOverlayTextUpper}>Title Goes Here</Text>
-        </View>
-
-        <View
-          style={{
-            position: "absolute",
-            top: -30,
-            left: 20,
-            right: 270,
-            bottom: 0,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Text style={styles.heroOverlayTextLower}>
-            Tagline will go right here
-          </Text>
-        </View> */}
-
         <Hero
           source={heroImage1}
           renderOverlay={() => (
@@ -144,7 +100,6 @@ export default function App() {
           )}
           style={styles.RNHero}
         />
-
         <View style={styles.tileContainer}>
           <TouchableOpacity>
             <Image source={WomensImageTile1} style={styles.tileButton} />
@@ -159,17 +114,15 @@ export default function App() {
             <Text style={styles.tileButtonText}>Accessories</Text>
           </TouchableOpacity>
         </View>
-
-        <Text style={styles.newArrivals}>New Arrivals</Text>
+        <Text style={styles.textHeaders}>New Arrivals</Text>
 
         <FlatList
-          data={carouselData}
+          data={carouselData1}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           horizontal={true}
           style={styles.FlatList}
         />
-
         <Hero
           source={HeroImage2Mobile}
           renderOverlay={() => (
@@ -185,6 +138,25 @@ export default function App() {
           )}
           style={styles.RNHero}
         />
+        <Text style={styles.textHeaders}>Follow us on Instagram!</Text>
+
+        <View style={styles.socialTileContainer}>
+          <TouchableOpacity>
+            <Image source={SocialImage1} style={styles.socialTileButton} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={SocialImage2} style={styles.socialTileButton} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={SocialImage3} style={styles.socialTileButton} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={SocialImage4} style={styles.socialTileButton} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={SocialImage5} style={styles.socialTileButton} />
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </View>
   );
@@ -197,12 +169,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // heroImage: {
-  //   marginBottom: 10,
-  //   alignSelf: "stretch",
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  // },
+
   announcement: {
     height: 35,
     fontSize: 15,
@@ -224,22 +191,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#10504F",
   },
-
-  // heroOverlayButtonText: {
-  //   backgroundColor: "black",
-  //   color: "white",
-  //   margin: 5,
-  //   padding: 6,
-  //   fontSize: 8,
-  // },
-  // heroOverlayTextUpper: {
-  //   color: "white",
-  //   fontSize: 15,
-  // },
-  // heroOverlayTextLower: {
-  //   color: "white",
-  //   fontSize: 10,
-  // },
 
   tileButton: {
     width: 90,
@@ -267,11 +218,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 
-  newArrivals: {
+  textHeaders: {
     color: "black",
     fontSize: 20,
     margin: 15,
     textAlign: "center",
+    flexDirection: "row",
+    alignContent: "center",
+    alignSelf: "center",
+    alignItems: "center",
   },
 
   item: {
@@ -352,5 +307,21 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     padding: 5,
     fontSize: 10,
+  },
+
+  socialTileContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    resizeMode: "contain",
+    flexWrap: "wrap",
+  },
+
+  socialTileButton: {
+    width: 60,
+    height: 60,
+    margin: 4,
+    marginBottom: 0,
+    justifyContent: "space-around",
   },
 });

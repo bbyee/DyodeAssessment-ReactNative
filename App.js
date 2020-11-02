@@ -1,15 +1,10 @@
 import React from "react";
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import heroImage1 from "./assets/HeroImage1Mobile.jpg";
 import logo from "./assets/Logo.png";
 import WomensImageTile1 from "./assets/WomensImage.jpg";
+import MensImageTile1 from "./assets/MensImage1.jpg";
+import AccessoriesImageTile1 from "./assets/AccessoriesImageMobile1.jpg";
 
 export default function App() {
   return (
@@ -19,7 +14,7 @@ export default function App() {
       </Text>
 
       <View style={styles.buttonContainer}>
-        <Image source={logo} style={styles.buttonText} />
+        <Image source={logo} style={styles.buttonContainer} />
         <TouchableOpacity>
           <Text style={styles.buttonText}>Womens</Text>
         </TouchableOpacity>
@@ -39,7 +34,7 @@ export default function App() {
       <View
         style={{
           position: "absolute",
-          top: 200,
+          top: 60,
           left: 0,
           right: 270,
           bottom: 0,
@@ -55,7 +50,7 @@ export default function App() {
       <View
         style={{
           position: "absolute",
-          top: 80,
+          top: -100,
           left: 20,
           right: 270,
           bottom: 0,
@@ -69,7 +64,7 @@ export default function App() {
       <View
         style={{
           position: "absolute",
-          top: 135,
+          top: -30,
           left: 20,
           right: 270,
           bottom: 0,
@@ -82,15 +77,18 @@ export default function App() {
         </Text>
       </View>
 
-      <View style={{ flexDirection: "row" }}>
+      <View style={styles.tileContainer}>
         <TouchableOpacity>
           <Image source={WomensImageTile1} style={styles.tileButton} />
+          <Text style={styles.tileButtonText}>Womens</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={WomensImageTile1} style={styles.tileButton} />
+          <Image source={MensImageTile1} style={styles.tileButton} />
+          <Text style={styles.tileButtonText}>Mens</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={WomensImageTile1} style={styles.tileButton} />
+          <Image source={AccessoriesImageTile1} style={styles.tileButton} />
+          <Text style={styles.tileButtonText}>Accessories</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -121,16 +119,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   buttonText: {
-    color: "white",
-    backgroundColor: "#265248",
     margin: 5,
+    color: "white",
   },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "center",
     alignSelf: "stretch",
     alignItems: "center",
-    backgroundColor: "#265248",
+    backgroundColor: "#10504F",
   },
 
   heroOverlayButtonText: {
@@ -153,6 +150,25 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     margin: 10,
+    marginBottom: 0,
     justifyContent: "space-around",
+  },
+
+  tileButtonText: {
+    justifyContent: "center",
+    alignSelf: "stretch",
+    backgroundColor: "#10504F",
+    textAlign: "center",
+    color: "white",
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 0,
+    height: 40,
+    padding: 6,
+    fontSize: 15,
+  },
+
+  tileContainer: {
+    flexDirection: "row",
   },
 });

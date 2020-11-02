@@ -1,6 +1,15 @@
 import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import heroImage1 from "./assets/HeroImage1Mobile.jpg";
+import logo from "./assets/Logo.png";
+import WomensImageTile1 from "./assets/WomensImage.jpg";
 
 export default function App() {
   return (
@@ -10,6 +19,7 @@ export default function App() {
       </Text>
 
       <View style={styles.buttonContainer}>
+        <Image source={logo} style={styles.buttonText} />
         <TouchableOpacity>
           <Text style={styles.buttonText}>Womens</Text>
         </TouchableOpacity>
@@ -24,7 +34,65 @@ export default function App() {
         </TouchableOpacity>
       </View>
 
-      <Image source={heroImage1} style={styles.hero} />
+      <Image source={heroImage1} style={styles.heroImage} />
+
+      <View
+        style={{
+          position: "absolute",
+          top: 200,
+          left: 0,
+          right: 270,
+          bottom: 0,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity>
+          <Text style={styles.heroOverlayButtonText}>SHOP NOW</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View
+        style={{
+          position: "absolute",
+          top: 80,
+          left: 20,
+          right: 270,
+          bottom: 0,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text style={styles.heroOverlayTextUpper}>Title Goes Here</Text>
+      </View>
+
+      <View
+        style={{
+          position: "absolute",
+          top: 135,
+          left: 20,
+          right: 270,
+          bottom: 0,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text style={styles.heroOverlayTextLower}>
+          Tagline will go right here
+        </Text>
+      </View>
+
+      <View style={{ flexDirection: "row" }}>
+        <TouchableOpacity>
+          <Image source={WomensImageTile1} style={styles.tileButton} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={WomensImageTile1} style={styles.tileButton} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={WomensImageTile1} style={styles.tileButton} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -36,9 +104,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  hero: {
+  heroImage: {
     marginBottom: 10,
     alignSelf: "stretch",
+    justifyContent: "center",
+    alignItems: "center",
   },
   announcement: {
     height: 35,
@@ -61,5 +131,28 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
     backgroundColor: "#265248",
+  },
+
+  heroOverlayButtonText: {
+    backgroundColor: "black",
+    color: "white",
+    margin: 5,
+    padding: 6,
+    fontSize: 8,
+  },
+  heroOverlayTextUpper: {
+    color: "white",
+    fontSize: 15,
+  },
+  heroOverlayTextLower: {
+    color: "white",
+    fontSize: 10,
+  },
+
+  tileButton: {
+    width: 90,
+    height: 90,
+    margin: 10,
+    justifyContent: "space-around",
   },
 });

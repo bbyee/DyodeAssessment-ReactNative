@@ -15,6 +15,7 @@ import MensImageTile1 from "./assets/MensImage1.jpg";
 import AccessoriesImageTile1 from "./assets/AccessoriesImageMobile1.jpg";
 import ProductImage1 from "./assets/ProductImage1.jpg";
 import HeroImage2Mobile from "./assets/HeroImage2Mobile.jpg";
+import Hero from "react-native-hero";
 
 const carouselData = [
   {
@@ -153,7 +154,19 @@ export default function App() {
           style={styles.FlatList}
         />
 
-        <Image source={HeroImage2Mobile} style={styles.heroImage} />
+        <Hero
+          source={HeroImage2Mobile}
+          renderOverlay={() => (
+            <View>
+              <Text style={styles.RNHeroText1}>Title Goes Here</Text>
+              <Text style={styles.RNHeroText2}>Tagline will go right here</Text>
+              <TouchableOpacity>
+                <Text style={styles.RNHeroButton}>SHOP NOW</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+          style={styles.RNHero}
+        />
       </ScrollView>
     </View>
   );
@@ -268,5 +281,32 @@ const styles = StyleSheet.create({
   FlatList: {
     alignSelf: "center",
     alignContent: "center",
+  },
+
+  RNHero: {
+    alignSelf: "stretch",
+    marginTop: 25,
+  },
+
+  RNHeroText1: {
+    color: "white",
+    fontSize: 15,
+    marginTop: 100,
+    marginLeft: 240,
+  },
+  RNHeroText2: {
+    color: "white",
+    fontSize: 15,
+    marginTop: 10,
+    marginLeft: 240,
+  },
+
+  RNHeroButton: {
+    color: "white",
+    backgroundColor: "#10504F",
+    alignSelf: "center",
+    marginLeft: 240,
+    marginBottom: 50,
+    padding: 5,
   },
 });

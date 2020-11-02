@@ -61,10 +61,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.announcement}>
-        FREE SHIPPING ON ALL ORDERS OVER $75
-      </Text>
       <ScrollView>
+        <Text style={styles.announcement}>
+          FREE SHIPPING ON ALL ORDERS OVER $75
+        </Text>
         <View style={styles.buttonContainer}>
           <Image source={logo} style={styles.buttonContainer} />
           <TouchableOpacity>
@@ -81,7 +81,7 @@ export default function App() {
           </TouchableOpacity>
         </View>
 
-        <Image source={heroImage1} style={styles.heroImage} />
+        {/* <Image source={heroImage1} style={styles.heroImage} />
 
         <View
           style={{
@@ -127,7 +127,23 @@ export default function App() {
           <Text style={styles.heroOverlayTextLower}>
             Tagline will go right here
           </Text>
-        </View>
+        </View> */}
+
+        <Hero
+          source={heroImage1}
+          renderOverlay={() => (
+            <View>
+              <Text style={styles.RNHeroText1Upper}>Title Goes Here</Text>
+              <Text style={styles.RNHeroText1Lower}>
+                Tagline will go right here
+              </Text>
+              <TouchableOpacity>
+                <Text style={styles.RNHeroButton1}>SHOP NOW</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+          style={styles.RNHero}
+        />
 
         <View style={styles.tileContainer}>
           <TouchableOpacity>
@@ -158,10 +174,12 @@ export default function App() {
           source={HeroImage2Mobile}
           renderOverlay={() => (
             <View>
-              <Text style={styles.RNHeroText1}>Title Goes Here</Text>
-              <Text style={styles.RNHeroText2}>Tagline will go right here</Text>
+              <Text style={styles.RNHeroText2Upper}>Title Goes Here</Text>
+              <Text style={styles.RNHeroText2Lower}>
+                Tagline will go right here
+              </Text>
               <TouchableOpacity>
-                <Text style={styles.RNHeroButton}>SHOP NOW</Text>
+                <Text style={styles.RNHeroButton2}>SHOP NOW</Text>
               </TouchableOpacity>
             </View>
           )}
@@ -179,12 +197,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  heroImage: {
-    marginBottom: 10,
-    alignSelf: "stretch",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  // heroImage: {
+  //   marginBottom: 10,
+  //   alignSelf: "stretch",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  // },
   announcement: {
     height: 35,
     fontSize: 15,
@@ -207,21 +225,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#10504F",
   },
 
-  heroOverlayButtonText: {
-    backgroundColor: "black",
-    color: "white",
-    margin: 5,
-    padding: 6,
-    fontSize: 8,
-  },
-  heroOverlayTextUpper: {
-    color: "white",
-    fontSize: 15,
-  },
-  heroOverlayTextLower: {
-    color: "white",
-    fontSize: 10,
-  },
+  // heroOverlayButtonText: {
+  //   backgroundColor: "black",
+  //   color: "white",
+  //   margin: 5,
+  //   padding: 6,
+  //   fontSize: 8,
+  // },
+  // heroOverlayTextUpper: {
+  //   color: "white",
+  //   fontSize: 15,
+  // },
+  // heroOverlayTextLower: {
+  //   color: "white",
+  //   fontSize: 10,
+  // },
 
   tileButton: {
     width: 90,
@@ -288,25 +306,51 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
 
-  RNHeroText1: {
+  RNHeroText2Upper: {
     color: "white",
     fontSize: 15,
     marginTop: 100,
     marginLeft: 240,
   },
-  RNHeroText2: {
+  RNHeroText2Lower: {
     color: "white",
     fontSize: 15,
     marginTop: 10,
     marginLeft: 240,
+    margin: 10,
   },
 
-  RNHeroButton: {
+  RNHeroButton2: {
     color: "white",
     backgroundColor: "#10504F",
     alignSelf: "center",
     marginLeft: 240,
     marginBottom: 50,
     padding: 5,
+  },
+
+  RNHeroText1Upper: {
+    color: "white",
+    fontSize: 15,
+    marginTop: 100,
+    marginRight: 240,
+  },
+
+  RNHeroText1Lower: {
+    color: "white",
+    fontSize: 15,
+    marginTop: 10,
+    marginRight: 240,
+    margin: 10,
+  },
+
+  RNHeroButton1: {
+    color: "white",
+    backgroundColor: "#10504F",
+    alignSelf: "center",
+    marginRight: 240,
+    marginBottom: 50,
+    padding: 5,
+    fontSize: 10,
   },
 });

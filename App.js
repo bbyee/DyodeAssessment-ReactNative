@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -21,6 +22,7 @@ import SocialImage2 from "./assets/Social2.jpg";
 import SocialImage3 from "./assets/Social3.jpg";
 import SocialImage4 from "./assets/Social4.jpg";
 import SocialImage5 from "./assets/Social5.jpg";
+import EmailIcon from "./assets/EmailIcon.png";
 
 const carouselData1 = [
   {
@@ -156,6 +158,28 @@ export default function App() {
           <TouchableOpacity>
             <Image source={SocialImage5} style={styles.socialTileButton} />
           </TouchableOpacity>
+        </View>
+
+        <View style={styles.stayConnectedContainer}>
+          <Text style={styles.stayConnectedText1}>
+            <Image source={EmailIcon} />
+            Sign Up &amp; Stay Connected
+          </Text>
+          <Text style={styles.stayConnectedText2}>
+            Sign up for the newsletter and get 20% off! Gain access to exclusive
+            offers and be the first to know when new stuff drops!
+          </Text>
+          <View style={styles.subscribeSection}>
+            <TextInput
+              style={styles.input}
+              placeholder="Your Email Address"
+              placeholderTextColor="#888"
+              backgroundColor="white"
+            ></TextInput>
+            <TouchableOpacity style={styles.subscribeButton}>
+              <Text style={styles.subscribeButtonText}>Subscribe</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -315,6 +339,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     resizeMode: "contain",
     flexWrap: "wrap",
+    marginBottom: 20,
   },
 
   socialTileButton: {
@@ -323,5 +348,59 @@ const styles = StyleSheet.create({
     margin: 4,
     marginBottom: 0,
     justifyContent: "space-around",
+  },
+
+  stayConnectedContainer: {
+    backgroundColor: "#10504F",
+  },
+
+  stayConnectedText1: {
+    color: "white",
+    textAlign: "center",
+    justifyContent: "center",
+    height: 60,
+    marginBottom: 0,
+    fontSize: 20,
+  },
+
+  stayConnectedText2: {
+    color: "white",
+    textAlign: "center",
+  },
+
+  input: {
+    marginTop: 10,
+    marginBottom: 10,
+    height: 45,
+    width: 200,
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
+  },
+
+  subscribeButton: {
+    marginTop: 10,
+    borderColor: "white",
+    borderBottomWidth: 2,
+    borderLeftWidth: 2,
+    borderRightWidth: 2,
+    borderTopWidth: 2,
+    width: 90,
+    height: 45,
+    marginLeft: 5
+  },
+
+  subscribeButtonText: {
+    color: "white",
+    textAlign: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    marginBottom: 10,
+  },
+
+  subscribeSection: {
+    flexDirection: "row",
+    justifyContent: "center"
   },
 });

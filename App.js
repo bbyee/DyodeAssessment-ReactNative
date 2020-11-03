@@ -23,6 +23,7 @@ import SocialImage3 from "./assets/Social3.jpg";
 import SocialImage4 from "./assets/Social4.jpg";
 import SocialImage5 from "./assets/Social5.jpg";
 import EmailIcon from "./assets/EmailIcon.png";
+import CollapsibleList from "react-native-collapsible-list";
 
 const carouselData1 = [
   {
@@ -181,7 +182,40 @@ export default function App() {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.customerServiceSection}></View>
+          <View style={styles.customerServiceSection}>
+            <CollapsibleList
+              numberOfVisibleItems={0}
+              wrapperStyle={styles.wrapperCollapsibleList}
+              buttonContent={
+                <View>
+                  <Text style={styles.CLButtonText}>Customer Service</Text>
+                </View>
+              }
+              buttonPosition={"top"}
+            >
+              <View style={styles.collapsibleItem}>
+                <Text>Accessibility</Text>
+              </View>
+              <View style={styles.collapsibleItem}>
+                <Text>Contact Us</Text>
+              </View>
+              <View style={styles.collapsibleItem}>
+                <Text>Return Policy</Text>
+              </View>
+              <View style={styles.collapsibleItem}>
+                <Text>FAQ</Text>
+              </View>
+              <View style={styles.collapsibleItem}>
+                <Text>Gift Certificates</Text>
+              </View>
+              <View style={styles.collapsibleItem}>
+                <Text>Wishlist</Text>
+              </View>
+              <View style={styles.collapsibleItem}>
+                <Text>About Us</Text>
+              </View>
+            </CollapsibleList>
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -404,5 +438,20 @@ const styles = StyleSheet.create({
   subscribeSection: {
     flexDirection: "row",
     justifyContent: "center",
+  },
+
+  wrapperCollapsibleList: {
+    flex: 1,
+    marginTop: 20,
+    overflow: "hidden",
+    backgroundColor: "#FFF",
+  },
+
+  CLButtonText: {},
+
+  collapsibleItem: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: "#CCC",
+    padding: 10,
   },
 });

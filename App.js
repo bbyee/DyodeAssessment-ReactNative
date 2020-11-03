@@ -180,6 +180,8 @@ export default function App() {
               <Text style={styles.subscribeButtonText}>Subscribe</Text>
             </TouchableOpacity>
           </View>
+
+          <View style={styles.customerServiceSection}></View>
         </View>
       </ScrollView>
     </View>
@@ -388,7 +390,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     width: 90,
     height: 45,
-    marginLeft: 5
+    marginLeft: 5,
   },
 
   subscribeButtonText: {
@@ -401,6 +403,6 @@ const styles = StyleSheet.create({
 
   subscribeSection: {
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
   },
 });

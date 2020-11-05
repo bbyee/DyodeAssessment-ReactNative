@@ -411,13 +411,13 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 15,
     marginTop: 100,
-    marginLeft: 240,
+    marginLeft: 260,
   },
   RNHeroText2Lower: {
     color: "white",
     fontSize: 15,
     marginTop: 10,
-    marginLeft: 240,
+    marginLeft: 260,
     margin: 10,
   },
 

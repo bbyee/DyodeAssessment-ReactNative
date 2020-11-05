@@ -25,6 +25,7 @@ to open the app in a simulator.
 
 ## Deployment
 
+Currently deployed here via Expo: https://expo.io/@brittanyy/projects/DyodeAssessment
 
 
 ## Built With

@@ -67,6 +67,10 @@ export default function App() {
     />
   );
 
+  //vars for footer sections conditional rendering:
+  const buttonPressed = <Text>-</Text>;
+  const buttonNotPressed = <Text>+</Text>;
+
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -181,42 +185,83 @@ export default function App() {
               <Text style={styles.subscribeButtonText}>Subscribe</Text>
             </TouchableOpacity>
           </View>
-
-          <View style={styles.customerServiceSection}>
-            <CollapsibleList
-              numberOfVisibleItems={0}
-              wrapperStyle={styles.wrapperCollapsibleList}
-              buttonContent={
-                <View>
-                  <Text style={styles.CLButtonText}>Customer Service</Text>
-                </View>
-              }
-              buttonPosition={"top"}
-            >
-              <View style={styles.collapsibleItem}>
-                <Text>Accessibility</Text>
-              </View>
-              <View style={styles.collapsibleItem}>
-                <Text>Contact Us</Text>
-              </View>
-              <View style={styles.collapsibleItem}>
-                <Text>Return Policy</Text>
-              </View>
-              <View style={styles.collapsibleItem}>
-                <Text>FAQ</Text>
-              </View>
-              <View style={styles.collapsibleItem}>
-                <Text>Gift Certificates</Text>
-              </View>
-              <View style={styles.collapsibleItem}>
-                <Text>Wishlist</Text>
-              </View>
-              <View style={styles.collapsibleItem}>
-                <Text>About Us</Text>
-              </View>
-            </CollapsibleList>
-          </View>
         </View>
+        <View style={styles.customerServiceSection}>
+          <CollapsibleList
+            numberOfVisibleItems={0}
+            wrapperStyle={styles.wrapperCollapsibleList}
+            buttonContent={
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  backgroundColor: "black",
+                }}
+              >
+                <Text style={styles.CLButtonText}>Customer Service</Text>
+                <Text style={styles.CLButtonSymbol}>+</Text>
+              </View>
+            }
+            buttonPosition={"top"}
+          >
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Accessibility</Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Contact Us</Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Return Policy</Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>FAQ</Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Gift Certificates</Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Wishlist</Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>About Us</Text>
+            </View>
+          </CollapsibleList>
+        </View>
+
+        <View style={styles.companySection}>
+          <CollapsibleList
+            numberOfVisibleItems={0}
+            wrapperStyle={styles.wrapperCollapsibleList}
+            buttonContent={
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  backgroundColor: "black",
+                }}
+              >
+                <Text style={styles.CLButtonText}>Company</Text>
+                <Text style={styles.CLButtonSymbol}>+</Text>
+              </View>
+            }
+            buttonPosition={"top"}
+          >
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>About Us </Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Careers </Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Press</Text>
+            </View>
+            <View style={styles.collapsibleItem}>
+              <Text style={styles.collapsibleItemText}>Affiliates </Text>
+            </View>
+          </CollapsibleList>
+        </View>
+        <View style={styles.Social}></View>
+        <Text style={styles.socialMedia}>Follow Us</Text>
       </ScrollView>
     </View>
   );
@@ -447,11 +492,43 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
 
-  CLButtonText: {},
+  CLButtonText: {
+    backgroundColor: "black",
+    color: "white",
+  },
+
+  collapsibleItemText: {
+    color: "white",
+  },
 
   collapsibleItem: {
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "#CCC",
     padding: 10,
+    backgroundColor: "black",
+    color: "white",
+  },
+
+  customerServiceSection: {
+    backgroundColor: "black",
+    color: "white",
+  },
+
+  companySection: {
+    backgroundColor: "black",
+    color: "white",
+    paddingBottom: 15,
+  },
+
+  socialMedia: {
+    flexDirection: "row-reverse",
+    justifyContent: "flex-end",
+    backgroundColor: "black",
+    color: "white",
+  },
+
+  CLButtonSymbol: {
+    color: "white",
+    backgroundColor: "black",
   },
 });

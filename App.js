@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   FlatList,
   Image,
@@ -24,6 +24,9 @@ import SocialImage4 from "./assets/Social4.jpg";
 import SocialImage5 from "./assets/Social5.jpg";
 import EmailIcon from "./assets/EmailIcon.png";
 import CollapsibleList from "react-native-collapsible-list";
+import FBIcon from "./assets/Group3.png";
+import IGIcon from "./assets/Group8.png";
+import TwitIcon from "./assets/Group15.png";
 
 const carouselData1 = [
   {
@@ -66,10 +69,6 @@ export default function App() {
       price={item.price}
     />
   );
-
-  //vars for footer sections conditional rendering:
-  const buttonPressed = <Text>-</Text>;
-  const buttonNotPressed = <Text>+</Text>;
 
   return (
     <View style={styles.container}>
@@ -260,8 +259,14 @@ export default function App() {
             </View>
           </CollapsibleList>
         </View>
-        <View style={styles.Social}></View>
-        <Text style={styles.socialMedia}>Follow Us</Text>
+        <View style={styles.Social}>
+          <Text style={styles.socialMedia}>Follow Us</Text>
+          <View style={{ flexDirection: "row", backgroundColor: "black" }}>
+            <Image source={FBIcon} style={styles.socialIcon} />
+            <Image source={IGIcon} style={styles.socialIcon} />
+            <Image source={TwitIcon} style={styles.socialIcon} />
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
@@ -521,14 +526,25 @@ const styles = StyleSheet.create({
   },
 
   socialMedia: {
-    flexDirection: "row-reverse",
-    justifyContent: "flex-end",
+    flexDirection: "row",
+    alignItems: "center",
+    resizeMode: "contain",
     backgroundColor: "black",
     color: "white",
+    paddingBottom: 10,
   },
 
   CLButtonSymbol: {
     color: "white",
     backgroundColor: "black",
+  },
+
+  socialIcon: {
+    backgroundColor: "black",
+    height: 20,
+    width: 20,
+    resizeMode: "contain",
+    padding: 10,
+    margin: 3,
   },
 });

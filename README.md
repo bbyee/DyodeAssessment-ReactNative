@@ -24,6 +24,14 @@ Once the file has been cloned to a local folder, cd into the folder and run
 
 to open the app in a simulator.
 
+Use the following commands for your viewing preference:
+
+ › Press a | open Android
+ › shift+a | select a device or emulator
+ › Press i | open iOS simulator
+ › shift+i | select a simulator
+ › Press w | open web
+
 
 ## Deployment
 

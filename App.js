@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
   FlatList,
   Image,
@@ -27,7 +27,24 @@ import CollapsibleList from "react-native-collapsible-list";
 import FBIcon from "./assets/Group3.png";
 import IGIcon from "./assets/Group8.png";
 import TwitIcon from "./assets/Group15.png";
+import * as Font from "expo-font";
+import { AppLoading } from "expo";
+import useFonts from "expo";
+import {
+  Lato_100Thin,
+  Lato_100Thin_Italic,
+  Lato_300Light,
+  Lato_300Light_Italic,
+  Lato_400Regular,
+  Lato_400Regular_Italic,
+  Lato_700Bold,
+  Lato_700Bold_Italic,
+  Lato_900Black,
+  Lato_900Black_Italic,
+} from "@expo-google-fonts/lato";
+import { Pacifico_400Regular } from "@expo-google-fonts/pacifico";
 
+//for image carousel flatlist
 const carouselData1 = [
   {
     title: "Product Title",
@@ -61,7 +78,25 @@ const Item = ({ title, description, price }) => (
   </View>
 );
 
+//MAIN APP
 export default function App() {
+  // let [fontsLoaded] = useFonts({
+  //   Lato_100Thin,
+  //   Lato_100Thin_Italic,
+  //   Lato_300Light,
+  //   Lato_300Light_Italic,
+  //   Lato_400Regular,
+  //   Lato_400Regular_Italic,
+  //   Lato_700Bold,
+  //   Lato_700Bold_Italic,
+  //   Lato_900Black,
+  //   Lato_900Black_Italic,Pacifico_400Regular
+  // });
+
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // }
+
   const renderItem = ({ item }) => (
     <Item
       title={item.title}
@@ -278,6 +313,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    fontFamily: "Pacifico",
   },
 
   announcement: {
@@ -463,6 +499,7 @@ const styles = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
     alignSelf: "center",
+    backgroundColor: "white",
   },
 
   subscribeButton: {

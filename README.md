@@ -5,6 +5,8 @@
 
 To develop a static version of provided mock-ups.
 
+![Demo](demo/mobileDemo.gif)
+
 
 ## Getting Started
 

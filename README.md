@@ -1,7 +1,5 @@
 # DyodeAssessment-ReactNative
 
-# Two Suns Translator
-
 
 ## Description
 
